@@ -1,0 +1,9 @@
+{% include 'bo/fields/caption.html' %}
+{% include 'bo/fields/errors.html' %}
+<div class="form-group" title="{{ field.help_text }}">
+	<input class="form-control"
+		{% if field.field.required %}required{% endif %}
+		name="{% if form.prefix %}{{form.prefix}}-{% endif %}{{ field.name }}"
+		type="email" id="{{ field.auto_id }}"
+		{% if field.value %}value="{{ field.value }}"{% endif %}/>
+</div>

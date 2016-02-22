@@ -1,0 +1,65 @@
+{% extends 'bo/_base_clean.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+
+	<div class="omb_login">
+		<h3 class="omb_authTitle">{% trans "Login or" %} <a href="{% url 'register' %}">{% trans "Sign up" %}</a></h3>
+		<div class="row omb_row-sm-offset-3 omb_socialButtons">
+			<div class="col-xs-4 col-sm-2">
+				<a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-lg btn-block omb_btn-facebook">
+					<i class="fa fa-facebook visible-xs"></i>
+					<span class="hidden-xs">Facebook</span>
+				</a>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}" class="btn btn-lg btn-block omb_btn-twitter">
+					<i class="fa fa-twitter visible-xs"></i>
+					<span class="hidden-xs">Twitter</span>
+				</a>
+			</div>	
+			<div class="col-xs-4 col-sm-2">
+				<a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn-lg btn-block omb_btn-google">
+					<i class="fa fa-google-plus visible-xs"></i>
+					<span class="hidden-xs">Google+</span>
+				</a>
+			</div>	
+		</div>
+
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">{% trans "or" %}</span>
+			</div>
+		</div>
+
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">	
+				<form class="omb_loginForm" action="{% url 'login' %}" method="post" enctype="multipart/form-data" role="form">
+				{% csrf_token %}
+					{%  include 'bo/_fields.html' %}
+					<button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Login" %}</button>
+				</form>
+			</div>
+		</div>
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-3">
+				<label class="checkbox">
+					<input type="checkbox" value="remember-me">{% trans "Remember Me" %}
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<p class="omb_forgotPwd">
+					<a href="{% url 'reset_password_reset1' %}">{% trans "Forgot password?" %}</a>
+				</p>
+			</div>
+		</div>	    	
+	</div>
+
+
+
+</div>
+{% endblock %}

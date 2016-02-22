@@ -1,0 +1,138 @@
+{% load staticfiles %}
+{% load i18n %}
+{% load bo_tags %}
+
+<!DOCTYPE html>
+<html   lang="{{ LANGUAGE_CODE }}" 
+        itemscope="" 
+        itemtype="http://schema.org/Organization" 
+        xmlns:og="http://opengraphprotocol.org/schema/" 
+        xmlns:fb="http://www.facebook.com/2008/fbml" 
+        class="modernizr-no-touchevents modernizr-flexbox modernizr-no-flexboxtweener">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="{% SETTINGS "SITE_AUTHOR" %}"/>
+        <meta name="description" content="{% SETTINGS "SITE_DESCRIPTION" %}"/>
+        <meta name="keywords" content="{% SETTINGS "SITE_KEYWORDS" %}"/>
+        <meta name="robots" content="index, follow"/>
+        <meta itemprop="name" content="{% SETTINGS "SITE_NAME" %}"/>
+        
+        <!-- OpenGraph Protocol -->
+        <meta property="og:title" content="{% SETTINGS "SITE_TITLE" %}"/>
+        <meta property="og:site_name" content="{% SETTINGS "SITE_NAME" %}"/>
+        <meta property="og:type" content="{% SETTINGS "SITE_TYPE" %}"/>
+        <meta property="og:url" content="{% SETTINGS "SITE_URL" %}"/>
+        <meta property="og:description" content="{% SETTINGS "SITE_DESCRIPTION" %}"/>
+
+        <meta property="og:image" content="{{ STATIC_URL }}bo/img/logos/barner.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="800">
+        <meta property="og:image:height" content="600">
+        
+        
+        <title>{% SETTINGS "SITE_NAME" %} - {% block title %}{% trans "System for teaching math." %}{% endblock %}</title>
+        
+
+        <!--  Favicon -->
+        <link xmlns="http://www.w3.org/1999/xhtml" rel="icon" type="image/png" id="favicon" href="{% static 'bo/img/favicon.png' %}" />
+
+        <link rel="canonical" href="http://www.bo.quixada.ufc.br" />       
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'bo/frameworks/bootstrap/css/bootstrap.min.css' %}">
+        
+        <!-- Select2 -->
+        <link rel="stylesheet" href="{% static 'bo/frameworks/select2/select2.css' %}" >
+
+
+        <!-- Animate -->
+        <link rel="stylesheet"  href="{% static 'bo/frameworks/animate/animate.css' %}" >
+
+        {% block stylesheet %}
+        {% endblock %}
+        
+        <!-- My Styles -->
+        <link rel="stylesheet"  href="{% static 'bo/css/fonts.css' %}" >
+        <link rel="stylesheet"  href="{% static 'bo/css/base.css' %}">
+        <link rel="stylesheet"  href="{% static 'bo/css/accessibility.css' %}" >
+        
+        
+        <!-- RESPONSIVE -->
+        <link rel="stylesheet"  href="{% static 'bo/css/tablet.css' %}" media="(max-width: 980px)">
+        <link rel="stylesheet"  href="{% static 'bo/css/mobile.css' %}" media="(max-width: 680px)">
+         
+        <!--[if (lt IE 9) & (!IEMobile)]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div id="site" class="container">
+            <header id="header">
+                {% include 'bo/_no_script.html' %}
+                {% comment %}{% include 'bo/_header_accessibility.html' %}{% endcomment %}
+                {% block header %}
+                    {% include 'bo/_header.html' %}
+                {% endblock %}
+            </header>   
+            <main id="main">
+                <section id="messages">
+                    {% block messages %} 
+                    {% include 'bo/_messages.html' %}
+                    {% endblock %}
+                </section>
+                <section id="main-content">
+                    {% block main-content %}
+                    {% endblock %}
+                </section>
+                <section id="modals"> 
+                    {% block modals %}
+                    {% endblock %}
+                </section>
+            </main>
+            <footer id="footer" class="footer-distributed" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+                {% block footer %}
+                    {% include 'bo/_footer.html' %}
+                {% endblock %}
+            </footer>
+        </div>
+
+
+        <!-- Jquery -->
+        <script src="{% static 'bo/frameworks/jquery/jquery-2.1.3.min.js' %}" />
+        <script src="{% static 'bo/frameworks/jquery/jquery-cookie.js"></script>
+        <script src="{% static 'bo/frameworks/jquery/jquery.dataTables.min.js' %}"></script>
+        
+        <!-- Json 2-->
+        <script src="{% static 'bo/frameworks/json/json2.js' %}"></script>
+
+
+        <!-- Select2 -->
+        <script src="{% static 'bo/frameworks/select2/select2.min.js' %}"></script>
+
+        <!-- Cookie -->
+        <script src="{% static 'bo/frameworks/cookie/cookies.js'%}"></script>
+                
+
+        <!-- Bootstrap -->
+        <script src="{% static 'bo/frameworks/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bo/frameworks/bootstrap/js/npm.js' %}"></script>     
+
+
+        <!-- Noty -->
+        <script src="{% static 'bo/frameworks/noty/packaged/jquery.noty.packaged.js' %}"></script>
+        <script src="{% static 'bo/frameworks/noty/themes/relax.js' %}"></script>
+
+        <!-- My Scripts -->
+        <script src="{% static 'bo/js/accessibility.js' %}"></script>
+        <script src="{% static 'bo/js/messages.js' %}"></script>
+        <script src="{% static 'bo/js/base.js' %}"></script>
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

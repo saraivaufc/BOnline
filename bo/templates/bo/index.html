@@ -1,0 +1,124 @@
+{% extends 'bo/_base_clean.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="text-xs-center">{% trans "Welcome to the Electronic Bulletin Events" %}</h1>
+
+<div class="card-deck-wrapper">
+	<div class="card-deck">
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Miscarriage" %}</h4>
+		    <p class="card-text">{% trans "Loss of objects, documents, financial." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Traffic accident" %}</h4>
+		    <p class="card-text">{% trans "Accident involving a motor vehicle without a victim." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Theft" %}</h4>
+		    <p class="card-text">{% trans "Subtraction of objects, documents, financial, without violence or threat to a person, except vehicle, firearm, ammunition and explosive." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Theft Person" %}</h4>
+		    <p class="card-text">{% trans "Subtraction object by serious threat or violence to the person that does not result in death or injury, except vehicle, firearm, ammunition and explosive." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+	</div>
+
+	</br>
+
+	<div class="card-deck">
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Theft Residence" %}</h4>
+		    <p class="card-text">{% trans "Subtraction object, document, financial, serious threat or violence upon the person that does not result in death or injury, except vehicle, firearm, ammunition and explosive." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Damage" %}</h4>
+		    <p class="card-text">{% trans "Destroy, render useless or deteriorate alien thing." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Injury" %}</h4>
+		    <p class="card-text">{% trans "Offend the dignity or decorum of someone." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Defamation" %}</h4>
+		    <p class="card-text">{% trans "Assign someone actually determined offensive to his reputation." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+	</div>
+
+
+	</br>
+
+	<div class="card-deck">
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Slander" %}</h4>
+		    <p class="card-text">{% trans "Assign falsely fact someone considered a crime." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Disappearance of People" %}</h4>
+		    <p class="card-text">{% trans "person's disappearance for unknown reasons." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <img class="card-img-top"  data-src="holder.js/100px180/" src="{% static 'bo/img/test.png/' %}" alt="Card image cap">
+		  <div class="card-block">
+		    <h4 class="card-title">{% trans "Breach of domicile" %}</h4>
+		    <p class="card-text">{% trans "Enter or remain clandestinely and craftily in someone else's house or on its premises." %}</p>
+		    <a href="#" class="btn btn-primary">Report</a>
+		  </div>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

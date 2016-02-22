@@ -1,0 +1,10 @@
+{% extends "bo/_base.html" %}
+{% load i18n %}
+{% block main-content %}
+	<ol class="breadcrumb">
+	  {% block breadcrumb  %}
+	  <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
+	  {% endblock  %}
+	</ol>
+    {% block content %}{% endblock %}
+{% endblock %}

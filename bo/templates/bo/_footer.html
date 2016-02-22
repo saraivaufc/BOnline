@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load bo_tags %}
+
+<div class="footer-right">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+    <div class="footer-left">
+
+        <p class="footer-links">
+            <a href="/index/">{% trans "Home" %}</a>
+            ·
+            <a href="/about/">{% trans "About Us" %}</a>
+            ·
+            <a href="/message/">{% trans "Contact Us" %}</a>
+            ·
+            <a href="/terms/">{% trans "Terms of service" %}</a>
+            ·
+            <a href="/policies/">{% trans "Privacy policy" %}</a>
+        </p>
+
+        <p>{% SETTINGS "SITE_COMPANY" %} &copy; 2015</p>
+    </div>

@@ -1,0 +1,12 @@
+{% include 'bo/fields/caption.html' %}
+{% include 'bo/fields/errors.html' %}
+<label class="input-control switch">
+     <input id="{{ field.auto_id }}" 
+    	   type="checkbox"
+    	   name="{% if form.prefix %}{{form.prefix}}-{% endif %}{{ field.name }}" 
+    	   title="{{ field.help_text }}" 
+    	   {% if field.field.required %}required{% endif %}
+    	   {% if field.value == True or field.initial == True %}checked{% endif %}
+    />
+    <span class="check"></span>
+</label>

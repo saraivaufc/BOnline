@@ -1,0 +1,32 @@
+{% load i18n %}
+{% load bo_tags %}
+
+{% for field in form.visible_fields %}
+	{% if field|is_checkbox %}
+		{% include 'bo/fields/checkbox.html' %}
+	{% elif field|is_radio %}
+		{% include 'bo/fields/radio.html' %}
+	{% elif field|is_select %}
+		{% include 'bo/fields/select.html' %}
+	{% elif field|is_select_multiple %}
+		{% include 'bo/fields/select_multiple.html' %}
+	{% elif field|is_file %}
+		{% include 'bo/fields/file.html' %}
+    {% elif field|is_text  %}
+    	{% include 'bo/fields/text.html' %}
+	{% elif field|is_textarea %}
+		{% include 'bo/fields/textarea.html' %}
+	{% elif field|is_email %}
+		{% include 'bo/fields/email.html' %}
+	{% elif field|is_number %}
+		{% include 'bo/fields/number.html' %}
+	{% elif field|is_date %}
+		{% include 'bo/fields/date.html' %}
+	{% elif field|is_password %}
+		{% include 'bo/fields/password.html' %}
+    {% elif field|is_captcha %}
+    	{% include 'bo/fields/captcha.html' %}
+    {% else %}
+    	{% include 'bo/fields/field.html' %}
+	{% endif %}
+{% endfor %}

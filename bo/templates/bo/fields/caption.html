@@ -1,0 +1,7 @@
+{% load i18n %}
+<label for="{{ field.auto_id }}" class="caption">
+	{{field.label}}
+	{% if field.field.required %}
+		<span title="{% trans "This field in required." %}" class="color-danger cursor-help"> * </span>
+	{% endif %}:
+</label>
