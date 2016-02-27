@@ -7,4 +7,5 @@ index = Index()
 
 urlpatterns = patterns('',
 	url(r'^$', index.index, name="index"),
+	url(r'^about/$', index.about, name="about"),
 )

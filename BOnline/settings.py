@@ -53,10 +53,9 @@ DJANGO_APPS = (
     'django.contrib.syndication',
 )
 THIRD_PARTY_APPS = (
-    'bootstrap3',
     'rosetta',
     'nocaptcha_recaptcha',
-    'social.apps.django_app.default',
+    'social.apps.django_app.default', #ERROR ImportError: No module named parse
 )
 
 LOCAL_APPS = (
@@ -66,8 +65,8 @@ LOCAL_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 AUTH_USER_MODEL = 'bo.Person'
-LOGIN_URL = '/accounts/signin/'
-LOGOUT_URL = '/accounts/signout/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
 
 
 
@@ -176,6 +175,12 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
 )
+
+#Recaptca
+NORECAPTCHA_SITE_KEY  = "6LdVnQ0TAAAAAAwnuLsezpZwIRFhdqs-yrwdmG3n"
+NORECAPTCHA_SECRET_KEY = "6LdVnQ0TAAAAAGtLXaOALJ6KTM4XvUF_bUg8enIc" 
+
+
 
 
 

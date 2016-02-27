@@ -19,7 +19,7 @@ except:
     from md5 import new as md5
 
 class PersonManager(UserManager):
-    def create_user(self, email, password=None, group='generalUser', **extra_fields):
+    def create_user(self, email, password=None, group='general', **extra_fields):
         print 'create_user'
         email = email
         user = self.model(
@@ -32,14 +32,20 @@ class PersonManager(UserManager):
     def create_superuser(self, email, password , **extra_fields):
         print 'create_superuser'
         user = self.create_user(email, password, 'organizer')
+        user.is_superuser = True
+        user.is_moderator = True
+        user.is_staff = True
+        user.save()
         return user
 
 class AbstractSystemPerson(models.Model):
     location = models.CharField(_(u"location"), max_length=75, blank=True, null=True)
     last_seen = models.DateTimeField(_(u"last seen"), auto_now=True)
     last_ip = models.GenericIPAddressField(_(u"last ip"), blank=True, null=True)
-    is_administrator = models.BooleanField(_('administrator status'), default=False,blank=True )
+    #is_superuser = models.BooleanField(_('administrator status'), default=False,blank=True )
     is_moderator = models.BooleanField(_('moderator status'), default=False, blank=True)
+    is_staff = models.BooleanField(_(u'staff status'), default=False,
+                                   help_text=_(u'Designates whether the user can log into this admin site.'))
     
 
     def get_location(self):
@@ -52,12 +58,6 @@ class AbstractSystemPerson(models.Model):
         return self.last_ip
     
     def save(self, *args, **kwargs):
-        if self.is_superuser:
-            self.is_administrator = True
-
-        if self.is_administrator:
-            self.is_teacher = True
-
         super(AbstractSystemPerson, self).save(*args, **kwargs)
         
     
@@ -68,8 +68,6 @@ class AbstractPerson(AbstractBaseUser, PermissionsMixin, AbstractSystemPerson):
     first_name = models.CharField(_(u"First Name "), max_length=100, blank=False,null=True,help_text=_(u'Please enter you first name.'),)
     last_name = models.CharField(_(u"Last Name "), max_length=100, blank=False,null=True,help_text=_(u'Please enter you last name.'),)
     email = models.EmailField(_(u"Email"), max_length=254, unique=True, blank=False, help_text=_(u'Please enter you email.'),)
-    is_staff = models.BooleanField(_(u'staff status'), default=False,
-                                   help_text=_(u'Designates whether the user can log into this admin site.'))
     is_active = models.BooleanField(_('active'), default=True,
                                     help_text=_(u'Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
     date_joined = models.DateTimeField(_(u'date joined'), default=timezone.now)
@@ -89,13 +87,19 @@ class AbstractPerson(AbstractBaseUser, PermissionsMixin, AbstractSystemPerson):
                 return self.get_first_name()
         else: 
            return self.get_email()
+    def get_short_name(self):
+        if self.get_first_name():
+            return self.get_first_name()
+        else:
+            return self.get_email()
+
 
     def get_email(self):
         return self.email
     
     def get_date_joined(self):
         return self.date_joined
-    
+
     USERNAME_FIELD = 'email'
     
     def __unicode__(self):
@@ -113,22 +117,33 @@ class AbstractPerson(AbstractBaseUser, PermissionsMixin, AbstractSystemPerson):
 
 class Person(AbstractPerson):
     profile_image = models.ImageField(verbose_name=_(u"Profile Image"),help_text=_(u"Please enter you profile image."),upload_to = 'documents/image/profile_image/%Y/%m/%d', null=True, blank=True, default=None)
-    phone = models.CharField(verbose_name=_('Phone'), max_length=200, blank=True, null=True)
     address = models.ForeignKey('Address',verbose_name=_('Address'), blank=True, null=True)
     exists = models.BooleanField(default = True)
 
-
     def save(self,group=None, *args, **kwargs):
         super(Person, self).save(*args, **kwargs)
-        if not group:
-            group = 'generalUser'
-        print "Add person in",group
-        group = Group.objects.get(name=group)
-        self.groups.add(group)
+        if not group and not self.get_groups():
+            group = 'general'
+        if group:
+            print "Add person in",group
+            group = Group.objects.get(name=group)
+            self.groups.add(group)
+
+    
+    def get_groups(self):
+        return self.groups.all()
+    
 
     def get_profile_image(self):
         return self.profile_image
     
+    def get_address(self):
+        return self.address
+
+    def set_address(self, address):
+        self.address = address
+        self.save()
+
     def __unicode__(self):
         return self.get_full_name()
     
@@ -149,14 +164,14 @@ class Person(AbstractPerson):
         verbose_name = _(u'Person')
         verbose_name_plural = _(u'Persons')
    
-class GeneralUser(Person):
+class General(Person):
 
     def __unicode__(self):
         return self.get_email()
 
     class Meta(Person.Meta):
-        verbose_name = _('GeneralUser')
-        verbose_name_plural = _('GeneralUsers')
+        verbose_name = _('General User')
+        verbose_name_plural = _('General Users')
 
 class Organizer(Person):
 

@@ -1,10 +1,21 @@
 {% load i18n %}
 
 {% if messages %}
+	{% comment %}
 	<ul class="messages">
     {% for message in messages %}
     	 {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
     	<li class="message" value="{{ message.tags }}">{{ message }}</li>
     {% endfor %}
     </ul>
+    {% endcomment %}
+
+    {% for message in messages %}
+    	<div class="alert alert-{{ message.tags }} alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}</strong> 
+			{{ message }}
+		</div>
+    {% endfor %}
+    
 {% endif %}

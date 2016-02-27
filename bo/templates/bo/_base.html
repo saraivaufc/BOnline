@@ -42,6 +42,7 @@
         
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{% static 'bo/frameworks/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bo/frameworks/bootstrap/css/bootstrap.min.css' %}">
         
         <!-- Select2 -->
         <link rel="stylesheet" href="{% static 'bo/frameworks/select2/select2.css' %}" >
@@ -72,33 +73,35 @@
 
     <body>
         <div id="site" class="container">
-            <header id="header">
-                {% include 'bo/_no_script.html' %}
-                {% comment %}{% include 'bo/_header_accessibility.html' %}{% endcomment %}
-                {% block header %}
-                    {% include 'bo/_header.html' %}
-                {% endblock %}
-            </header>   
-            <main id="main">
-                <section id="messages">
-                    {% block messages %} 
-                    {% include 'bo/_messages.html' %}
+            <div class="row">
+                <header id="header">
+                    {% include 'bo/_no_script.html' %}
+                    {% comment %}{% include 'bo/_header_accessibility.html' %}{% endcomment %}
+                    {% block header %}
+                        {% include 'bo/_header.html' %}
                     {% endblock %}
-                </section>
-                <section id="main-content">
-                    {% block main-content %}
+                    <section id="messages">
+                        {% block messages %} 
+                        {% include 'bo/_messages.html' %}
+                        {% endblock %}
+                    </section>
+                </header>   
+                <main id="main">
+                    <section id="main-content">
+                        {% block main-content %}
+                        {% endblock %}
+                    </section>
+                    <section id="modals"> 
+                        {% block modals %}
+                        {% endblock %}
+                    </section>
+                </main>
+                <footer id="footer" class="footer-distributed" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+                    {% block footer %}
+                        {% include 'bo/_footer.html' %}
                     {% endblock %}
-                </section>
-                <section id="modals"> 
-                    {% block modals %}
-                    {% endblock %}
-                </section>
-            </main>
-            <footer id="footer" class="footer-distributed" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-                {% block footer %}
-                    {% include 'bo/_footer.html' %}
-                {% endblock %}
-            </footer>
+                </footer>
+            </div>
         </div>
 
 
@@ -122,14 +125,8 @@
         <script src="{% static 'bo/frameworks/bootstrap/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'bo/frameworks/bootstrap/js/npm.js' %}"></script>     
 
-
-        <!-- Noty -->
-        <script src="{% static 'bo/frameworks/noty/packaged/jquery.noty.packaged.js' %}"></script>
-        <script src="{% static 'bo/frameworks/noty/themes/relax.js' %}"></script>
-
         <!-- My Scripts -->
         <script src="{% static 'bo/js/accessibility.js' %}"></script>
-        <script src="{% static 'bo/js/messages.js' %}"></script>
         <script src="{% static 'bo/js/base.js' %}"></script>
 
         {% block scripts %}

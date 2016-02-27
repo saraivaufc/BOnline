@@ -6,5 +6,19 @@
 	  <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
 	  {% endblock  %}
 	</ol>
+	<div class="page-header">
+		<h1 class="text-xs-center">
+			{% block page_header %}{% endblock %}
+		</h1>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="pull-right commands">
+			{% block commands %}
+
+			{% endblock %}
+			</div>
+		</div>
+	</div>
     {% block content %}{% endblock %}
 {% endblock %}

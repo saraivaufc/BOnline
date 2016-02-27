@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load bo_tags %}
 
-<nav class="navbar navbar-dark bg-inverse">
+<nav class="navbar nav-pills  navbar-dark bg-inverse">
   <a class="navbar-brand" href="/index/">{% SETTINGS "SITE_NAME" %}</a>
   <ul class="nav navbar-nav">
 	<li class="nav-item active">
@@ -10,28 +10,42 @@
 		</a>
 	</li>
 	<li class="nav-item">
+		<a class="nav-link" href="#">{% trans "Statistics" %}</a>
+	</li>
+	<li class="nav-item">
 		<a class="nav-link" href="#">{% trans "Help" %}</a>
 	</li>
   </ul>
+  {% comment %}
   <form class="form-inline pull-right">
 	<input class="form-control" type="text" placeholder="{% trans "Search" %}">
-		<button class="btn btn-info-outline" type="submit">
+		<button class="btn btn-primary-outline" type="submit">
 			<span class="fa fa-search"></span>
 		</button>
   </form>
+  {% endcomment %}
   <ul class="nav navbar-nav pull-right">
-	  <li  class="nav-item  dropdown">
-		<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> {{ request.user }}</a>
-		<ul class="dropdown-menu">
-		  	<li class="dropdown-item">
-				<a href="#">{% trans "Profile" %}</a>
-		  	</li>
-		 	 <li role="separator" class="divider"></li>
-		 	<li class="dropdown-item">
-				<a href="{% url 'logout' %}">{% trans "Logout" %}</a>
-			</li>
-		</ul>
-	  </li>
+  		{% if request.user.is_authenticated %}
+	  	<li  class="nav-item dropdown">
+			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{ request.user.get_full_name }}</a>
+			<ul class="dropdown-menu">
+			  	<li class="dropdown-item">
+					<a href="{% url 'settings' 'profile' %}">
+						<i class="fa fa-gears"></i> {% trans "Settings" %}
+					</a>
+			  	</li>
+			 	 <li role="separator" class="divider"></li>
+			 	<li class="dropdown-item">
+					<a href="{% url 'logout' %}">
+						<i class="fa fa-sign-out"></i> {% trans "Logout" %}
+					</a>
+				</li>
+			</ul>
+	  	</li>
+	  	{% else %}
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'login' %}">{% trans "Login" %}</a>
+		</li>
+	  	{% endif %}
 	</ul>
 </nav>
-</br>

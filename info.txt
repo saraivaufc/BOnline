@@ -1,0 +1,33 @@
+Miscarriage
+Loss of objects, documents, financial.
+______________________________________________________________________-
+Traffic accident
+Accident involving a motor vehicle without a victim.
+______________________________________________________________________
+Theft
+Subtraction of objects, documents, financial, without violence or threat to a person, except vehicle, firearm, ammunition and explosive.
+______________________________________________________________________
+Theft Person
+Subtraction object by serious threat or violence to the person that does not result in death or injury, except vehicle, firearm, ammunition and explosive.
+______________________________________________________________________
+Theft Residence
+Subtraction object, document, financial, serious threat or violence upon the person that does not result in death or injury, except vehicle, firearm, ammunition and explosive.
+______________________________________________________________________
+Damage
+Destroy, render useless or deteriorate alien thing.
+______________________________________________________________________
+Injury
+Offend the dignity or decorum of someone.
+______________________________________________________________________
+Defamation
+Assign someone actually determined offensive to his reputation.
+______________________________________________________________________
+Slander
+Assign falsely fact someone considered a crime.
+______________________________________________________________________
+Disappearance of People
+person's disappearance for unknown reasons.
+______________________________________________________________________
+Breach of domicile
+Enter or remain clandestinely and craftily in someone else's house or on its premises.
+______________________________________________________________________

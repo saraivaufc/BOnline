@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^', include('bo.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin_django/', include(admin.site.urls)),
 )
 
 if 'rosetta' in settings.INSTALLED_APPS:

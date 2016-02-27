@@ -1,0 +1,21 @@
+{% extends 'bo/index.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load bo_tags %}
+
+
+{% block breadcrumb  %}
+	{{ block.super }}
+  	<li>{% trans "About Us" %}</li>
+{% endblock  %}
+
+{% block page_header %}{% trans "About Us" %}{% endblock %}
+
+{% block content %}
+
+<section>
+
+</section>
+
+{% endblock %}

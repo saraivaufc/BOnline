@@ -3,12 +3,18 @@
 {% load staticfiles %}
 {% load i18n %}
 
+{% block breadcrumb  %}
+    {{ block.super  }}
+    <li><a href="{% url 'register' %}">{% trans "Register" %}</a></li>
+{% endblock  %}
+
+
 {% block content %}
 <div class="container">
     <div class="row centered-form">
     <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
     	<div class="card">
-    		<h3 class="card-header">Register</h3>
+    		<h3 class="card-header">{% trans "Register" %}</h3>
     		<dir class="card-block">
     			<h4 class="card-title"></h4>
     			<form role="form" action="{% url 'register' %}" method="post" enctype="multipart/form-data" role="form">

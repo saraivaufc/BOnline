@@ -5,9 +5,12 @@ from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth import authenticate, login as login_user
 from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
 
 
-from bo.forms.accounts import LoginForm, RegisterForm, GeneralUserRegisterForm, OrganizerRegisterForm
+from bo.forms.accounts import LoginForm, RegisterForm, GeneralRegisterForm, OrganizerRegisterForm, AddressForm, ProfileForm
 from bo.management.permissions import group_permissions
 from bo.views.index import Index
 from bo.models import RegisterKey, OrganizerKey
@@ -57,8 +60,8 @@ class Accounts(object):
             group = request.POST['group']
             if group in group_permissions:
                 key = None
-                if group == 'generalUser':
-                    form = GeneralUserRegisterForm(request.POST, request.FILES)
+                if group == 'general':
+                    form = GeneralRegisterForm(request.POST, request.FILES)
                 elif group == 'organizer':
                     form = OrganizerRegisterForm(request.POST, request.FILES)
                     if form.is_valid():
@@ -92,3 +95,63 @@ class Accounts(object):
         else:
             form = RegisterForm()
         return render(request, 'bo/accounts/register.html', {'form': form})
+    @method_decorator(login_required)
+    def settings(self, request, action=None):
+        context = {}
+        if action == 'profile':
+            context['is_profile']=True
+            return render(request, 'bo/accounts/settings/profile.html', context)
+        
+        elif action == 'edit_profile':
+            context['is_profile']=True
+            if request.method == 'POST':
+                form = ProfileForm(request.POST, request.FILES, instance=request.user)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, _("Profile successfully edit."))
+                    return HttpResponseRedirect(reverse('settings', kwargs={'action':'profile'}))
+                else:
+                    messages.error(request, _("Form no valid."))
+            else:
+                form = ProfileForm(instance=request.user)
+                context['form'] = form
+            context['is_edit_profile']= True
+            return render(request, 'bo/accounts/settings/profile.html', context)
+        
+        elif action == 'address': 
+            context['is_address']=True
+            return render(request, 'bo/accounts/settings/address.html', context)
+
+        elif action == 'add_address' or action == 'edit_address':
+            context['is_address']=True
+            address = request.user.get_address()
+            if request.method == 'POST':
+                if address:
+                    form = AddressForm(request.POST, request.FILES, instance=address)
+                else:
+                    form = AddressForm(request.POST, request.FILES)
+                if form.is_valid():
+                    if address:
+                        form.save()
+                    else:
+                        address = form.save()
+                        request.user.set_address(address)
+                    if action == 'add_address':
+                        messages.success(request, _('Address successfully add.'))
+                    else:
+                        messages.success(request, _('Address successfully edit.'))
+                else:
+                    messages.error(request, _('Form no valid.'))
+            else:
+                if address:
+                    form = AddressForm(instance=address)
+                    context['is_edit_address']=True
+                else:
+                    form = AddressForm()
+                    context['is_add_address']=True
+                context['form'] = form
+            return render(request, 'bo/accounts/settings/address.html', context)
+        else:
+            messages.error(request, _("Action no found. Used action default."))
+
+        return HttpResponseRedirect(reverse('index'))

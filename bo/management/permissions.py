@@ -2,7 +2,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import Group, Permission
 
 from django.db.models import signals
-from bo.models import Person, GeneralUser, Organizer 
+from bo.models import Person, General, Organizer 
 from django.contrib.auth.models import User, Group
 from django.db.models.signals import post_save
 
@@ -13,7 +13,7 @@ permissions = {}
 
 group_permissions = {
 	"organizer": [],
-	"generalUser": [],
+	"general": [],
 }
 
 
@@ -25,10 +25,10 @@ def create_user_groups(app, created_models, verbosity, **kwargs):
 	for group in group_permissions:
 		if group == 'organizer':
 			model = Organizer
-		elif group == 'generalUser':
-			model = GeneralUser
+		elif group == 'general':
+			model = General
 		else:
-			model = GeneralUser
+			model = General
 		content_type = ContentType.objects.get_for_model(model)
 
 		role, created = Group.objects.get_or_create(name=group)

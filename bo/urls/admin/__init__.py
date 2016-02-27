@@ -6,4 +6,5 @@ index = Index()
 
 urlpatterns = patterns('',
 	url(r'^$', index.admin, name="admin"),
+    url(r'^occurrence/', include('bo.urls.admin.occurrence')),
 )
