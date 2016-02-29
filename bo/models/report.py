@@ -5,8 +5,7 @@ from django.utils import timezone
 class Report(models.Model):
 	person = models.ForeignKey('Person', verbose_name=_(u"Person"), related_name='Person')
 	occurrence = models.ForeignKey('Occurrence', verbose_name=_(u"Occurrence"), related_name='Occurrence')
-	date = models.DateField(verbose_name=_(u"Date"))
-	time = models.TimeField(verbose_name=_(u"Time"))
+	datetime = models.DateTimeField(verbose_name=_(u"Datetime"))
 	
 	address = models.ForeignKey('Address', verbose_name=_(u"Address"), related_name='Address')
 	observation = models.CharField( max_length=255,
@@ -39,11 +38,8 @@ class Report(models.Model):
 	def get_occurrence(self):
 		return self.occurrence
 
-	def get_date(self):
-		return self.date
-
-	def get_time(self):
-		return self.time
+	def get_datetime(self):
+		return self.datetime
 
 	def get_address(self):
 		return self.address
@@ -64,7 +60,7 @@ class Report(models.Model):
 		self.save()
 	
 	class Meta:
-		ordering = ['-occurrence']
+		ordering = ['-datetime']
 		verbose_name = _(u"Report")
 		verbose_name_plural = _(u"Reports")
 

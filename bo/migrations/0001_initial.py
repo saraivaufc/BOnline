@@ -126,8 +126,7 @@ class Migration(migrations.Migration):
             name='Report',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('date', models.DateField(verbose_name='Date')),
-                ('time', models.TimeField(verbose_name='Hora')),
+                ('datetime', models.DateTimeField(verbose_name='Date')),
                 ('observation', models.CharField(help_text='enter a description for the event. Example to be given: to destroy, render useless or deteriorate alien thing.', max_length=255, null=True, verbose_name='Observation', blank=True)),
                 ('image', models.ImageField(help_text='Enter image to report.', upload_to=b'documents/image/report/%Y/%m/%d', null=True, verbose_name='Imagem', blank=True)),
                 ('creation', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Creation')),
@@ -137,7 +136,7 @@ class Migration(migrations.Migration):
                 ('person', models.ForeignKey(related_name='Person', verbose_name='Person', to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'ordering': ['-occurrence'],
+                'ordering': ['-datetime'],
                 'verbose_name': 'Report',
                 'verbose_name_plural': 'Reports',
             },

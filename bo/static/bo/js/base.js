@@ -18,3 +18,9 @@ $("select[name='group']").change(function(){
 		hideKey();
 	}
 });
+
+
+$('input[type="datetime"]').datetimepicker({
+	format:'d/m/Y H:i',
+	timepickerScrollbar:false,
+});

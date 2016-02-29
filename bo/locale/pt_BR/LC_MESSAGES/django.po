@@ -1,0 +1,761 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-29 11:20-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: bo/forms/accounts.py:12 bo/models/user.py:70
+msgid "Email"
+msgstr ""
+
+#: bo/forms/accounts.py:12 bo/forms/accounts.py:14 bo/models/user.py:70
+msgid "Please enter you email."
+msgstr ""
+
+#: bo/forms/accounts.py:15 bo/forms/accounts.py:23
+msgid "Password"
+msgstr ""
+
+#: bo/forms/accounts.py:15 bo/forms/accounts.py:17
+msgid "Please enter you password."
+msgstr ""
+
+#: bo/forms/accounts.py:24
+msgid "Password confirmation"
+msgstr ""
+
+#: bo/forms/accounts.py:26
+msgid "General"
+msgstr ""
+
+#: bo/forms/accounts.py:27 bo/models/user.py:182
+msgid "Organizer"
+msgstr ""
+
+#: bo/forms/accounts.py:29
+msgid "Group"
+msgstr ""
+
+#: bo/forms/accounts.py:30 bo/models/access.py:12
+msgid "Key"
+msgstr ""
+
+#: bo/forms/accounts.py:31
+msgid ""
+"If you want to create a record in this group should have an access key for "
+"this, please contact the administrator."
+msgstr ""
+
+#: bo/forms/accounts.py:40
+msgid "Passwords don't match"
+msgstr ""
+
+#: bo/models/access.py:11
+msgid "Creator"
+msgstr ""
+
+#: bo/models/access.py:13
+msgid "In Use"
+msgstr ""
+
+#: bo/models/access.py:15 bo/models/address.py:12 bo/models/occurrence.py:17
+#: bo/models/report.py:23
+msgid "Creation"
+msgstr ""
+
+#: bo/models/access.py:16 bo/models/address.py:13 bo/models/occurrence.py:18
+#: bo/models/report.py:24
+msgid "Exists"
+msgstr ""
+
+#: bo/models/access.py:38
+msgid "Register Key"
+msgstr ""
+
+#: bo/models/access.py:39
+msgid "Register Keys"
+msgstr ""
+
+#: bo/models/access.py:55
+msgid "Organizer Key"
+msgstr ""
+
+#: bo/models/access.py:56
+msgid "Organizes Key"
+msgstr ""
+
+#: bo/models/address.py:6
+msgid "Zip Code"
+msgstr ""
+
+#: bo/models/address.py:7
+msgid "Street"
+msgstr ""
+
+#: bo/models/address.py:7
+msgid "Please enter street."
+msgstr ""
+
+#: bo/models/address.py:8
+msgid "District"
+msgstr ""
+
+#: bo/models/address.py:8
+msgid "Please enter district."
+msgstr ""
+
+#: bo/models/address.py:9
+msgid "City"
+msgstr ""
+
+#: bo/models/address.py:9
+msgid "Please enter city."
+msgstr ""
+
+#: bo/models/address.py:10
+msgid "State"
+msgstr ""
+
+#: bo/models/address.py:10
+msgid "Please enter state."
+msgstr ""
+
+#: bo/models/address.py:39 bo/models/report.py:11 bo/models/user.py:120
+#: bo/templates/bo/accounts/settings/address.html:10
+#: bo/templates/bo/accounts/settings/settings.html:27
+msgid "Address"
+msgstr ""
+
+#: bo/models/address.py:40
+msgid "Addreses"
+msgstr ""
+
+#: bo/models/occurrence.py:7 bo/templates/bo/admin/occurrence/dump.html:21
+msgid "Name"
+msgstr ""
+
+#: bo/models/occurrence.py:8
+msgid "enter the name of the event. Example: theft, damage, etc."
+msgstr ""
+
+#: bo/models/occurrence.py:10 bo/templates/bo/admin/occurrence/dump.html:22
+msgid "Description"
+msgstr ""
+
+#: bo/models/occurrence.py:11 bo/models/report.py:14
+msgid ""
+"enter a description for the event. Example to be given: to destroy, render "
+"useless or deteriorate alien thing."
+msgstr ""
+
+#: bo/models/occurrence.py:12 bo/models/report.py:17
+msgid "Image"
+msgstr ""
+
+#: bo/models/occurrence.py:13
+msgid "Please enter image to occurrence."
+msgstr ""
+
+#: bo/models/occurrence.py:43 bo/models/report.py:7
+#: bo/templates/bo/admin/occurrence/form.html:9
+#: bo/templates/bo/content/report/see_all.html:19
+msgid "Occurrence"
+msgstr ""
+
+#: bo/models/occurrence.py:44
+msgid "Occurrences"
+msgstr ""
+
+#: bo/models/report.py:6 bo/models/user.py:164
+msgid "Person"
+msgstr ""
+
+#: bo/models/report.py:8
+msgid "Date"
+msgstr ""
+
+#: bo/models/report.py:9
+msgid "Time"
+msgstr ""
+
+#: bo/models/report.py:13
+msgid "Observation"
+msgstr ""
+
+#: bo/models/report.py:18
+msgid "Enter image to report."
+msgstr ""
+
+#: bo/models/report.py:68 bo/templates/bo/content/report/form.html:14
+#: bo/templates/bo/content/report/form.html:50 bo/templates/bo/index.html:23
+msgid "Report"
+msgstr ""
+
+#: bo/models/report.py:69
+msgid "Reports"
+msgstr ""
+
+#: bo/models/user.py:42
+msgid "location"
+msgstr ""
+
+#: bo/models/user.py:43
+msgid "last seen"
+msgstr ""
+
+#: bo/models/user.py:44
+msgid "last ip"
+msgstr ""
+
+#: bo/models/user.py:46
+msgid "moderator status"
+msgstr ""
+
+#: bo/models/user.py:47
+msgid "staff status"
+msgstr ""
+
+#: bo/models/user.py:48
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: bo/models/user.py:68
+msgid "First Name "
+msgstr ""
+
+#: bo/models/user.py:68
+msgid "Please enter you first name."
+msgstr ""
+
+#: bo/models/user.py:69
+msgid "Last Name "
+msgstr ""
+
+#: bo/models/user.py:69
+msgid "Please enter you last name."
+msgstr ""
+
+#: bo/models/user.py:71
+msgid "active"
+msgstr ""
+
+#: bo/models/user.py:72
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: bo/models/user.py:73
+msgid "date joined"
+msgstr ""
+
+#: bo/models/user.py:119
+msgid "Profile Image"
+msgstr ""
+
+#: bo/models/user.py:119
+msgid "Please enter you profile image."
+msgstr ""
+
+#: bo/models/user.py:165
+msgid "Persons"
+msgstr ""
+
+#: bo/models/user.py:173
+msgid "General User"
+msgstr ""
+
+#: bo/models/user.py:174
+msgid "General Users"
+msgstr ""
+
+#: bo/models/user.py:183
+msgid "Organizes"
+msgstr ""
+
+#: bo/templates/bo/_base.html:35
+msgid "System for teaching math."
+msgstr ""
+
+#: bo/templates/bo/_base_clean.html:6 bo/templates/bo/_footer.html:16
+#: bo/templates/bo/_header.html:16
+msgid "Home"
+msgstr ""
+
+#: bo/templates/bo/_footer.html:18 bo/templates/bo/about.html:10
+#: bo/templates/bo/about.html.py:13
+msgid "About Us"
+msgstr ""
+
+#: bo/templates/bo/_footer.html:20
+msgid "Contact Us"
+msgstr ""
+
+#: bo/templates/bo/_footer.html:22
+msgid "Terms of service"
+msgstr ""
+
+#: bo/templates/bo/_footer.html:24
+msgid "Privacy policy"
+msgstr ""
+
+#: bo/templates/bo/_header.html:18 bo/templates/bo/index.html:24
+msgid "Statistics"
+msgstr ""
+
+#: bo/templates/bo/_header.html:20
+#: bo/templates/bo/content/report/see_all.html:9
+#: bo/templates/bo/content/report/see_all.html:12
+msgid "My Reports"
+msgstr ""
+
+#: bo/templates/bo/_header.html:28
+#: bo/templates/bo/accounts/settings/settings.html:10
+msgid "Settings"
+msgstr ""
+
+#: bo/templates/bo/_header.html:31
+msgid "Logout"
+msgstr ""
+
+#: bo/templates/bo/_header.html:36 bo/templates/bo/accounts/login.html:8
+#: bo/templates/bo/accounts/login.html:50
+msgid "Login"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:8
+msgid "Skip to main content of the page - Shortcut #1"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:8
+msgid "Jump to Content"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:12
+msgid "On/Off High Contrast - Shortcut #3"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:12
+msgid "High Contrast-OFF"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:16
+msgid "Increase Font - Shortcut #3"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:16
+msgid "Increase Font"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:20
+msgid "Decrease Font - Shortcut #4"
+msgstr ""
+
+#: bo/templates/bo/_header_accessibility.html:20
+msgid "Decrease Font"
+msgstr ""
+
+#: bo/templates/bo/_no_script.html:4
+msgid ""
+"For full functionality of this site it is necessary to enable JavaScript."
+"<br> Here are the <a href=\"http://www.enable-javascript.com/pt/\" target="
+"\"_blank\">instructions on how to enable JavaScript in your browser </a>."
+msgstr ""
+
+#: bo/templates/bo/accounts/login.html:16
+msgid "Login or"
+msgstr ""
+
+#: bo/templates/bo/accounts/login.html:16
+msgid "Sign up"
+msgstr ""
+
+#: bo/templates/bo/accounts/login.html:41
+msgid "or"
+msgstr ""
+
+#: bo/templates/bo/accounts/login.html:57
+msgid "Remember Me"
+msgstr ""
+
+#: bo/templates/bo/accounts/login.html:62
+msgid "Forgot password?"
+msgstr ""
+
+#: bo/templates/bo/accounts/register.html:8
+#: bo/templates/bo/accounts/register.html:17
+#: bo/templates/bo/accounts/register.html:23
+msgid "Register"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_change_done.html:6
+#: bo/templates/registration/password_change_done.html:7
+msgid "Password change successful"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_change_done.html:8
+#: bo/templates/registration/password_change_done.html:9
+msgid "Your password was changed."
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_change_form.html:6
+#: bo/templates/registration/password_change_form.html:7
+msgid "Password reset"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_change_form.html:8
+#: bo/templates/bo/accounts/registration/password_reset_form.html:19
+#: bo/templates/registration/password_change_form.html:9
+#: bo/templates/registration/password_reset_form.html:13
+msgid "Forgotten your password? Enter your email addess below,"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_change_form.html:14
+#: bo/templates/bo/accounts/registration/password_reset_confirm.html:21
+#: bo/templates/registration/password_change_form.html:15
+#: bo/templates/registration/password_reset_confirm.html:21
+msgid "Change my password"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_complete.html:10
+#: bo/templates/registration/password_reset_complete.html:12
+msgid "Password reset complete"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_complete.html:13
+#: bo/templates/registration/password_reset_complete.html:15
+msgid "Your password has been set.  You may go ahead and log in now"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_complete.html:14
+#: bo/templates/registration/password_reset_complete.html:16
+#, python-format
+msgid "Go to <a href='%(login_url)s'>Log in</a>..."
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_confirm.html:10
+#: bo/templates/registration/password_reset_confirm.html:10
+msgid "Enter new password"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_confirm.html:14
+#: bo/templates/registration/password_reset_confirm.html:14
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_confirm.html:27
+#: bo/templates/registration/password_reset_confirm.html:27
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_confirm.html:28
+#: bo/templates/registration/password_reset_confirm.html:28
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_done.html:11
+#: bo/templates/registration/password_reset_done.html:12
+msgid "Password Reset Done"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_done.html:14
+#: bo/templates/registration/password_reset_done.html:15
+msgid "Password reset successful!!!"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_email.html:2
+#: bo/templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_email.html:4
+#: bo/templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_email.html:8
+#: bo/templates/registration/password_reset_email.html:8
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_email.html:10
+#: bo/templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_email.html:12
+#: bo/templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_form.html:7
+msgid "Password Reset"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_form.html:16
+#: bo/templates/registration/password_reset_form.html:10
+msgid "Reset Password"
+msgstr ""
+
+#: bo/templates/bo/accounts/registration/password_reset_form.html:26
+#: bo/templates/registration/password_reset_form.html:20
+msgid "Reset my password"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:18
+msgid "Edit Address"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:32
+#: bo/templates/bo/accounts/settings/profile.html:29
+#: bo/templates/bo/admin/occurrence/form.html:35
+msgid "Submit"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:37
+msgid "CEP:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:40
+msgid "Street:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:43
+msgid "District:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:46
+msgid "City:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:49
+msgid "State:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:57
+msgid "Address no exists, add address now?"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:58
+msgid "No"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/address.html:59
+msgid "Yes"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:10
+#: bo/templates/bo/accounts/settings/settings.html:24
+msgid "Profile"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:19
+msgid "Edit Profile"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:43
+msgid "First Name:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:46
+msgid "Last Name:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:49
+msgid "Email:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:52
+msgid "Date Joined:"
+msgstr ""
+
+#: bo/templates/bo/accounts/settings/profile.html:55
+msgid "User Groups:"
+msgstr ""
+
+#: bo/templates/bo/admin/admin.html:8
+#: bo/templates/bo/admin/occurrence/form.html:14
+msgid "Add Occurrence"
+msgstr ""
+
+#: bo/templates/bo/admin/admin.html:9
+msgid "Dump"
+msgstr ""
+
+#: bo/templates/bo/admin/admin.html:26
+#: bo/templates/bo/content/report/see_all.html:31
+msgid "Edit"
+msgstr ""
+
+#: bo/templates/bo/admin/admin.html:27
+#: bo/templates/bo/content/report/see_all.html:34
+msgid "Remove"
+msgstr ""
+
+#: bo/templates/bo/admin/occurrence/dump.html:9
+#: bo/templates/bo/admin/occurrence/dump.html:13
+msgid "Dump of occurrences"
+msgstr ""
+
+#: bo/templates/bo/admin/occurrence/dump.html:23
+#: bo/templates/bo/content/report/see_all.html:21
+msgid "Options"
+msgstr ""
+
+#: bo/templates/bo/admin/occurrence/dump.html:33
+msgid "Restore"
+msgstr ""
+
+#: bo/templates/bo/admin/occurrence/form.html:16
+#, python-format
+msgid ""
+"\n"
+"  \t\tEdit %(occurrence)s\n"
+"  \t\t"
+msgstr ""
+
+#: bo/templates/bo/content/report/form.html:16
+#, python-format
+msgid ""
+"\n"
+"  \t\tEdit %(report)s\n"
+"  \t\t"
+msgstr ""
+
+#: bo/templates/bo/content/report/see_all.html:20
+msgid "Date and Time"
+msgstr ""
+
+#: bo/templates/bo/fields/caption.html:5
+msgid "This field in required."
+msgstr ""
+
+#: bo/templates/bo/index.html:7
+msgid "Welcome to the Electronic Bulletin Events"
+msgstr ""
+
+#: bo/views/accounts.py:44
+msgid "Email or password incorrect."
+msgstr ""
+
+#: bo/views/accounts.py:46 bo/views/accounts.py:92
+msgid "Form no valid"
+msgstr ""
+
+#: bo/views/accounts.py:71
+msgid "Key no found"
+msgstr ""
+
+#: bo/views/accounts.py:74 bo/views/accounts.py:94
+msgid "Group not found."
+msgstr ""
+
+#: bo/views/accounts.py:83
+msgid "User created success."
+msgstr ""
+
+#: bo/views/accounts.py:90
+msgid "Created user error."
+msgstr ""
+
+#: bo/views/accounts.py:111
+msgid "Profile successfully edit."
+msgstr ""
+
+#: bo/views/accounts.py:114 bo/views/accounts.py:144
+msgid "Form no valid."
+msgstr ""
+
+#: bo/views/accounts.py:140
+msgid "Address successfully add."
+msgstr ""
+
+#: bo/views/accounts.py:142
+msgid "Address successfully edit."
+msgstr ""
+
+#: bo/views/accounts.py:155
+msgid "Action no found. Used action default."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:23
+msgid "Occurrence added success."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:26
+msgid "Error adding occurrence."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:44
+msgid "Successfully edited occurrence"
+msgstr ""
+
+#: bo/views/admin/occurrence.py:47
+msgid "Error when editing occurrence"
+msgstr ""
+
+#: bo/views/admin/occurrence.py:65
+msgid "Successfully removed occurrence."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:68
+msgid "Error removing occurrence."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:81
+msgid "Successfully restored occurrence."
+msgstr ""
+
+#: bo/views/admin/occurrence.py:84
+msgid "Error restore occurrence."
+msgstr ""
+
+#: bo/views/content/report.py:30 bo/views/content/report.py:61
+msgid "Report added success."
+msgstr ""
+
+#: bo/views/content/report.py:33 bo/views/content/report.py:64
+msgid "Error adding report."
+msgstr ""
+
+#: bo/views/content/report.py:96
+msgid "Successfully edited report"
+msgstr ""
+
+#: bo/views/content/report.py:99
+msgid "Error when editing report."
+msgstr ""
+
+#: bo/views/content/report.py:122
+msgid "Successfully removed report."
+msgstr ""
+
+#: bo/views/content/report.py:126
+msgid "Error removing report."
+msgstr ""
+
+#: nocaptcha_recaptcha/fields.py:21
+msgid "Incorrect, please try again."
+msgstr ""

@@ -55,7 +55,8 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'rosetta',
     'nocaptcha_recaptcha',
-    'social.apps.django_app.default', #ERROR ImportError: No module named parse
+    'social.apps.django_app.default', 
+    'datetimewidget',
 )
 
 LOCAL_APPS = (
@@ -110,6 +111,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
@@ -205,14 +207,19 @@ LANGUAGE_CODE = 'pt_BR'
 TIME_ZONE = 'America/Fortaleza'
 
 FORMAT_MODULE_PATH = 'BOnline.formats'
+
 DATE_FORMAT = 'd/m/Y'
 TIME_FORMAT = 'G:i'
 DATETIME_FORMAT = 'd/m/Y G:i'
+
+DATE_INPUT_FORMATS = ('%d/%m/%Y')
+DATETIME_INPUT_FORMATS = ('%d/%m/%Y %H:%M',)
 
 
 USE_I18N = True
 
 USE_L10N = True
+
 
 USE_TZ = False
 
