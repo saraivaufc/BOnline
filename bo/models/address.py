@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 from django.utils import timezone
 
 class Address(models.Model):
-    cep = models.CharField(max_length=9, verbose_name=_("CEP"), help_text="Format: XXXXX-XXX")
+    zip_code = models.CharField(max_length=9, verbose_name=_("Zip Code"), help_text="Format: XXXXX-XXX")
     street = models.CharField(max_length=255, verbose_name=_(u"Street"), help_text=_(u'Please enter street.'))
     district = models.CharField(max_length=255, verbose_name=_(u"District"), help_text=_(u'Please enter district.'))
     city = models.CharField(max_length=255, verbose_name=_(u"City"), help_text=_(u'Please enter city.'))
@@ -12,8 +12,8 @@ class Address(models.Model):
     creation = models.DateTimeField(verbose_name=_(u'Creation'), default=timezone.now)
     exists = models.BooleanField(verbose_name=_(u"Exists"), default=True)
 
-    def get_cep(self):
-        return self.cep
+    def get_zip_code(self):
+        return self.zip_code
     def get_street(self):
         return self.street
     def get_district(self):
@@ -24,7 +24,7 @@ class Address(models.Model):
         return self.state
 
     def __unicode__(self):
-        return self.cep
+        return self.zip_code
 
     def delete(self):
         self.exists = False
@@ -35,6 +35,6 @@ class Address(models.Model):
         self.save()
     
     class Meta:
-        ordering = ['cep']
+        ordering = ['zip_code']
         verbose_name = _(u"Address")
         verbose_name_plural = _(u"Addreses")

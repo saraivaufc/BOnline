@@ -22,6 +22,10 @@
 		{% include 'bo/fields/number.html' %}
 	{% elif field|is_date %}
 		{% include 'bo/fields/date.html' %}
+	{% elif field|is_datetime %}
+		{% include 'bo/fields/datetime.html' %}
+	{% elif field|is_time %}
+		{% include 'bo/fields/time.html' %}
 	{% elif field|is_password %}
 		{% include 'bo/fields/password.html' %}
     {% elif field|is_captcha %}

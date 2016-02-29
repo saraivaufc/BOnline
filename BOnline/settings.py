@@ -204,6 +204,12 @@ LANGUAGE_CODE = 'pt_BR'
 
 TIME_ZONE = 'America/Fortaleza'
 
+FORMAT_MODULE_PATH = 'BOnline.formats'
+DATE_FORMAT = 'd/m/Y'
+TIME_FORMAT = 'G:i'
+DATETIME_FORMAT = 'd/m/Y G:i'
+
+
 USE_I18N = True
 
 USE_L10N = True

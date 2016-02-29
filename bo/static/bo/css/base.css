@@ -227,24 +227,11 @@ label[for='id_key'], input[name='key']{
 
 /* CARDS */
 
-.card-deck-wrapper > .card-deck{
-	width: 100%;
+.card-group > .card > img{
+	opacity: .6;
 }
 
-.card-deck-wrapper > .card-deck >  .card{
-	max-width: 20%;
-	width: 20%;
-}
-
-.card-deck-wrapper > .card-deck > .card > img{
-	opacity: 0.4;
-}
-
-.card-deck-wrapper > .card-deck > .card > img:hover{
-	opacity: 0.1;
-}
-
-.card-deck-wrapper > .card-deck > .card > .card-img-overlay > h4, .card-deck-wrapper > .card-deck > .card > .card-img-overlay > p{ 
+.card-group > .card > .card-img-overlay > h4, .card-group > .card > .card-img-overlay > p{ 
 	text-shadow: 1px 1px #000;
 	color: #000;
 }

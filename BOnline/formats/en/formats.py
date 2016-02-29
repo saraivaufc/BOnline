@@ -1,0 +1,3 @@
+DATE_FORMAT = 'd/M/Y'
+DATETIME_FORMAT = 'd/m/Y H:i'
+SHORT_DATETIME_FORMAT = 'd/m/Y H:i'

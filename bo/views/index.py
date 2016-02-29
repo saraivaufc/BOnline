@@ -9,7 +9,6 @@ from bo.utils.decorators import group_required
 from bo.models import Occurrence
 
 class Index(object):
-	
 	def index(self, request): 
 		if request.user.groups.filter(name='organizer').exists():
 			return HttpResponseRedirect(reverse('admin'))
@@ -17,19 +16,19 @@ class Index(object):
 			return HttpResponseRedirect(reverse('content'))
 		else:
 			occurrences = Occurrence.objects.filter(exists=True)
-			return render(request, 'bo/index.html', {'occurrences': occurrences})
+			return render(request, 'bo/index.html', {'is_index':True,'occurrences': occurrences})
 
 	@method_decorator(login_required)
 	@method_decorator(group_required('general'))
 	def content(self, request):
 		occurrences = Occurrence.objects.filter(exists=True)
-		return render(request, 'bo/content/content.html', {'occurrences':occurrences})
+		return render(request, 'bo/content/content.html', {'is_index':True,'occurrences':occurrences})
 	
 	@method_decorator(login_required)
 	@method_decorator(group_required('organizer'))
 	def admin(self, request):
 		occurrences = Occurrence.objects.filter(exists=True)
-		return render(request, 'bo/admin/admin.html', {'occurrences':occurrences})
+		return render(request, 'bo/admin/admin.html', {'is_index':True,'occurrences':occurrences})
 
 	
 	def contact(self, request):

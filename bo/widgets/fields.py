@@ -24,14 +24,14 @@ class AdvancedFileInput(ClearableFileInput):
         }
         template = u'%(input)s'
 
-        substitutions['input'] = super(ClearableFileInput, self).render(name, value, attrs)
+        substitutions['input'] = super(ClearableFileInput, self).render(name, value, attrs)+ "</br></br>"
 
         if value and hasattr(value, "url"):
 
             template = self.template_with_initial
             if self.preview:
                 substitutions['initial'] = (u'<a href="{0}">{1}</a><br>\
-                <a href="{0}" target="_blank"><img src="{0}" width="{2}"></a><br>'.format
+                <a href="{0}" target="_blank"><img src="{0}" width="{2}"></a></br>'.format
                     (escape(value.url),'...'+escape(force_unicode(value))[-self.url_length:],
                      self.image_width))
             else:

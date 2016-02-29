@@ -9,19 +9,18 @@
   	<li>{{ type|title }} {% trans "Occurrence" %}</li>
 {% endblock  %}
 
+{% block page_header %}
+	{% if type == 'add' %}
+  		{% trans "Add Occurrence" %}
+  	{% elif type == 'edit' %}
+  		{% blocktrans with occurrence=occurrence %}
+  		Edit {{ occurrence }}
+  		{% endblocktrans %}
+  	{% else %}
+	{% endif %}
+{% endblock %}
+
 {% block content %}
-<div class="page-header">
-	<h1 class="text-xs-center">
-		{% if type == 'add' %}
-	  		{% trans "Add Occurrence" %}
-	  	{% elif type == 'edit' %}
-	  		{% blocktrans with occurrence=occurrence %}
-	  		Edit {{ occurrence }}
-	  		{% endblocktrans %}
-	  	{% else %}
-		{% endif %}
-	</h1>
-</div>
 <form action="{% if type == 'add' %}
 			  {% url 'admin_occurrence_add' %}
 			  {% elif type == 'edit' %}

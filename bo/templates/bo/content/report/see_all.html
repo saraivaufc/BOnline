@@ -1,0 +1,42 @@
+{% extends 'bo/content/content.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load bo_tags %}
+
+{% block breadcrumb  %}
+	{{ block.super }}
+  	<li><a href="{% url 'content_report_see_all' %}">{% trans "My Reports" %}</a></li>
+{% endblock  %}
+
+{% block page_header %}{% trans "My Reports" %}{% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+<table class="table table-striped table-bordered table-hover" data-role="datatable">
+	<thead>
+		<tr>
+			<td>{% trans "Occurrence" %}</td>
+			<td>{% trans "Date and Time" %}</td>
+			<td>{% trans "Options" %}</td>
+		</tr>
+	</thead>
+	<tbody>
+	{% for report in reports %}
+	<tr>
+		<td class="sortable-column">{{ report.get_occurrence }}</td>
+		<td class="sortable-column">{{ report.get_date|date:"DATE_FORMAT" }}</td>
+		<td class="sortable-column">
+			<a class="btn btn-primary" href="{% url 'content_report_edit' report.id %}">
+				<i class="fa fa-edit"></i> {% trans "Edit" %}
+			</a>
+			<a class="btn btn-danger" href="{% url 'content_report_remove' report.id %}">
+				<i class="fa fa-remove"></i> {% trans "Remove" %}
+			</a>
+		</td>
+	{% endfor %}
+	</tbody>
+</table>
+</div>
+
+{% endblock %}

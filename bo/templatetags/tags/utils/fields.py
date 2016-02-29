@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils.translation import ugettext as _
-from django.forms import CheckboxInput, RadioSelect, ClearableFileInput, Select, SelectMultiple, TextInput, PasswordInput, EmailInput, Textarea, NumberInput, DateInput, DateTimeInput, URLInput
+from django.forms import CheckboxInput, RadioSelect, ClearableFileInput, Select, SelectMultiple, TextInput, PasswordInput, EmailInput, Textarea, NumberInput, DateInput, TimeInput, DateTimeInput, URLInput
 from nocaptcha_recaptcha.fields import NoReCaptchaField
+from bo.widgets import AdvancedFileInput
 
 from .. import register
 
@@ -56,6 +57,12 @@ def is_date(field):
 @register.filter(name='is_datetime')
 def is_datetime(field):
     return field.field.widget.__class__.__name__ == DateTimeInput().__class__.__name__
+
+@register.filter(name='is_time')
+def is_time(field):
+    return field.field.widget.__class__.__name__ == TimeInput().__class__.__name__
+
+
 
 
 @register.filter(name='is_url')

@@ -1,0 +1,53 @@
+{% extends 'bo/content/report/see_all.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load bo_tags %}
+
+{% block breadcrumb  %}
+	{{ block.super }}
+  	<li>{{ occurrence.get_name }}</li>
+{% endblock  %}
+
+{% block page_header %}
+	{% if type == 'add' %}
+  		{% trans "Report" %} {{ occurrence.get_name }}
+  	{% elif type == 'edit' %}
+  		{% blocktrans with report=report %}
+  		Edit {{ report }}
+  		{% endblocktrans %}
+  	{% else %}
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+<form  action="{% if type == 'add' %}
+			  {% url 'content_report_add' occurrence.id %}
+			  {% elif type == 'edit' %}
+			  	{% url 'content_report_edit' report.id %}
+			  {% else %}
+			  	.
+			  {% endif %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<div class="container-fluid">
+			<div class="row">
+			{% with form=form_address %}		  
+				{% include 'bo/_fields.html' %}
+			{% endwith %}
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<div class="container-fluid">
+			<div class="row">
+			{% with form=form_report %}		  
+				{% include 'bo/_fields.html' %}
+			{% endwith %}
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<button class="btn btn-primary form-control" type="submit">{% trans "Report" %}</button>	
+	</div>
+</form>
+{% endblock %}

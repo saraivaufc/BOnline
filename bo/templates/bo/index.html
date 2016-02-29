@@ -8,25 +8,22 @@
 
 
 {% block content %}
-
-<div class="card-deck-wrapper">
-	<div class="card-deck">
+<div class="card-group">
  	{% for occurrence in occurrences %}
 		{% if forloop.counter0|is_divisible:4 and forloop.counter0 != 0 %}
 		</div>
 		</br>
-		<div class="card-deck">
+		<div class="card-group">
 		{% endif %}
 		<div class="card">
 			<img class="card-img-top" src="{% if occurrence.get_image %}{{occurrence.get_image.url}}{% else %}{% static 'bo/img/test.png/' %}{% endif %}" alt="Card image cap" width="100%">
 			<div class="card-img-overlay">
 				<h4 class="card-title" >{{ occurrence.get_name }}</h4>
 				<p class="card-text">{{ occurrence.get_description }}</p>
-				<a href="#" class="btn btn-primary">{% trans "Report" %}</a>
+				<a href="{% url 'content_report_add' occurrence.id %}" class="btn btn-primary">{% trans "Report" %}</a>
 				<a href="#" class="btn btn-info">{% trans "Statistics" %}</a>
 			</div>
 		</div>
 	{% endfor %}
-	</div>
 </div>
 {% endblock %}

@@ -63,7 +63,10 @@ class ProfileForm(ModelForm):
 class AddressForm(ModelForm):
     class Meta:
         model = Address
-        fields = ("cep", "street", "district", "city", "state")
+        fields = ("zip_code", "street", "district", "city", "state")
+        widgets = {
+            'zip_code': TextInput(attrs={'placeholder':'-----/---'}),
+        }
 
 class GeneralRegisterForm(RegisterForm):
     class Meta(RegisterForm.Meta):

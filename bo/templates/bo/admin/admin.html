@@ -11,25 +11,23 @@
 
 
 {% block content %}
-<div class="card-deck-wrapper">
-	<div class="card-deck">
-	 	{% for occurrence in occurrences %}
-			{% if forloop.counter0|is_divisible:4 and forloop.counter0 != 0 %}
+<div class="card-group">
+ 	{% for occurrence in occurrences %}
+		{% if forloop.counter0|is_divisible:4 and forloop.counter0 != 0 %}
+		</div>
+		</br>
+		<div class="card-group">
+		{% endif %}
+		<div class="card">
+			<img class="card-img-top" src="{% if occurrence.get_image %}{{occurrence.get_image.url}}{% else %}{% static 'bo/img/test.png/' %}{% endif %}" alt="Card image cap" width="100%">
+			<div class="card-img-overlay">
+				<h4 class="card-title" >{{ occurrence.get_name }}</h4>
+				<p class="card-text">{{ occurrence.get_description }}</p>
+				<a href="{% url 'admin_occurrence_edit' occurrence.id %}" class="btn btn-primary"><i class="fa fa-edit"></i> {% trans "Edit" %}</a>
+				<a href="{% url 'admin_occurrence_remove' occurrence.id %}" class="btn btn-danger"><i class="fa fa-remove"></i> {% trans "Remove" %}</a>
 			</div>
-			</br>
-			<div class="card-deck">
-			{% endif %}
-			<div class="card">
-				<img class="card-img-top" src="{% if occurrence.get_image %}{{occurrence.get_image.url}}{% else %}{% static 'bo/img/test.png/' %}{% endif %}" alt="Card image cap" width="100%">
-				<div class="card-img-overlay">
-					<h4 class="card-title" >{{ occurrence.get_name }}</h4>
-					<p class="card-text">{{ occurrence.get_description }}</p>
-					<a href="{% url 'admin_occurrence_edit' occurrence.id %}" class="btn btn-primary"><i class="fa fa-edit"></i> {% trans "Edit" %}</a>
-					<a href="{% url 'admin_occurrence_remove' occurrence.id %}" class="btn btn-danger"><i class="fa fa-remove"></i> {% trans "Remove" %}</a>
-				</div>
-			</div>
-		{% endfor %}
-	</div>
+		</div>
+	{% endfor %}
 </div>
 
 {% endblock %}
