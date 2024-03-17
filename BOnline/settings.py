@@ -143,15 +143,15 @@ DATABASES = {
 
 
 #Admin
-ADMINS = ( (u'Ciano Saraiva',u'saraiva.ufc@gmail.com'), )
+ADMINS = ( (u'XXXXX',u'XXXXXX'), )
 
 
 #EMAIL
-EMAIL_ADMINS = [u'saraiva.ufc@gmail.com',]
-DEFAULT_FROM_EMAIL= u'saraiva.ufc@gmail.com'
+EMAIL_ADMINS = [u'XXXXXX',]
+DEFAULT_FROM_EMAIL= u'XXXXXX'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = u'saraiva.ufc@gmail.com'
-EMAIL_HOST_PASSWORD = u'Relatividade1995'
+EMAIL_HOST_USER = u'XXXXX'
+EMAIL_HOST_PASSWORD = u'XXXX'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -179,12 +179,8 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 #Recaptca
-NORECAPTCHA_SITE_KEY  = "6LdVnQ0TAAAAAAwnuLsezpZwIRFhdqs-yrwdmG3n"
-NORECAPTCHA_SECRET_KEY = "6LdVnQ0TAAAAAGtLXaOALJ6KTM4XvUF_bUg8enIc" 
-
-
-
-
+NORECAPTCHA_SITE_KEY  = "XXXXXX"
+NORECAPTCHA_SECRET_KEY = "XXXXXX" 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
